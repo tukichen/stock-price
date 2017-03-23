@@ -12,6 +12,9 @@ app.questions['Do you like cupcakes?']=('yes','no','maybe')
 
 app.nquestions = len(app.questions)
 
+@app.route('/',methods=['GET','POST'])
+def homepg():
+    return redirect('/index')
 
 @app.route('/index',methods=['GET','POST'])
 def index():
