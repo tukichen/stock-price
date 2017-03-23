@@ -3,6 +3,7 @@ from flask import Flask,render_template,request, redirect
 app = Flask(__name__)
 
 app.vars = {}
+f1, f2, f3, f4 = ['Open','Close','High','Low']
 
 # create a dict of questions
 app.questions = {}

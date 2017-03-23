@@ -1,0 +1,12 @@
+Name: e
+Age: 1
+
+Which fruit do you like best?
+banana
+
+Do you like cupcakes?
+yes
+
+How many eyes do you have?
+2
+
