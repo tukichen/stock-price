@@ -90,12 +90,12 @@ def index():
         f.write('plot'+ '|'.join(tickers)+'\n')
         f.close()
         #---------------------------------------'''
-        output_file("./templates/stock.html", title="Stock Price")
-        save(gridplot([plot_list], plot_width=600, plot_height=600))  # open a browser
-        return render_template('stock.html')
-        #script, div = components(plot_list)
+        #output_file("./templates/stock.html", title="Stock Price")
+        #save(gridplot([plot_list], plot_width=600, plot_height=600))  # open a browser
+        #return render_template('stock.html')
+        script, div = components(plot_list)
         #-------------------return html plot from bokeh----------------------
-        #return render_template('stocks.html', script=script, div=div)
+        return render_template('stocks.html', script=script, div=div)
 
 
 ##########################################################################
