@@ -1,0 +1,4 @@
+Name: ['GOOG']
+price - Open| - High
+columnWIKI/GOOG-Open - Open|WIKI/GOOG-Open - High
+plotGOOG
