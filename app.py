@@ -38,7 +38,7 @@ def index():
         if request.form.get('low'):   app.vars['input_feature'].append(' - Low')
     
 
-        
+        #----------------------start python analysis and bokeh plot----------------
         tickers = app.vars['name']        # A list of tickers
         input_feature = app.vars['input_feature']   # A list of features to show
         # create a list of dataset names
@@ -81,14 +81,14 @@ def index():
     
             plot_list.append(globals()['p%s' % x])
 
-        '''#----------------------------------------
+        #----------------------------------------
         f = open('%s_price.txt'%(app.vars['name']),'w')
         f.write('Name: %s\n'%(app.vars['name']))
         f.write('price'+ '|'.join(app.vars['input_feature'])+'\n')
         f.write('column'+ '|'.join(features)+'\n')
         f.write('plot'+ '|'.join(plot_list)+'\n')
         f.close()
-        #---------------------------------------'''
+        #---------------------------------------
         output_file("./templates/stocks.html", title="Stock Price")
 
         show(gridplot([plot_list], plot_width=600, plot_height=600))  # open a browser
