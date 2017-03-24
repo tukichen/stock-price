@@ -86,7 +86,7 @@ def index():
         f.write('Name: %s\n'%(app.vars['name']))
         f.write('price'+ '|'.join(app.vars['input_feature'])+'\n')
         f.write('column'+ '|'.join(features)+'\n')
-        f.write('plot'+ '|'.join(plot_list)+'\n')
+        f.write('plot'+ '|'.join(tickers)+'\n')
         f.close()
         #---------------------------------------
         output_file("./templates/stocks.html", title="Stock Price")

@@ -1,0 +1,4 @@
+Name: ['FB', 'MS', 'AAPL']
+price - Close| - Low
+columnWIKI/FB-Open - Close|WIKI/FB-Open - Low|WIKI/MS-Open - Close|WIKI/MS-Open - Low|WIKI/AAPL-Open - Close|WIKI/AAPL-Open - Low
+plotFB|MS|AAPL
