@@ -7,7 +7,7 @@ import quandl
 
 import bokeh
 from bokeh.layouts import gridplot
-from bokeh.plotting import figure, show, output_file
+from bokeh.plotting import figure, show, output_file,save
 
 from flask import Flask,render_template,request, redirect
 # ----------------------------------------------------------------------
@@ -91,7 +91,7 @@ def index():
         #---------------------------------------
         output_file("./templates/stocks.html", title="Stock Price")
 
-        show(gridplot([plot_list], plot_width=600, plot_height=600))  # open a browser
+        save(gridplot([plot_list], plot_width=600, plot_height=600))  # open a browser
 
 
         #-------------------return html plot from bokeh----------------------
