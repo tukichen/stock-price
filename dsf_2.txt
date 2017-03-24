@@ -1,7 +1,0 @@
-Name: dsf
-Age: 2
-
-Which fruit do you like best?
-banana
-
-Do you like cupcakes?

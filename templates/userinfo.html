@@ -6,23 +6,20 @@
   <div class=metanav>
 
 <h4>
-    Please enter a list of {{num}} stock tickers separated by comma (eg. GOOG, AAPL) and check desired features.
+    Please enter a list of stock tickers separated by comma (eg. GOOG, AAPL) and check prices to show.
 </h4>
 
 <form id='userinfoform' method='post' action='index' > <!-- action is the URL you want to move to next-->
    <p>
    Ticker symbol: <input type='text' name='name' />
    </p>
-   <p>
-   Features: <input type='text' name='age' />
-   </p>
    
    <p>
-   Features: <br />
-   <input type='checkbox' name='feature' value='Opening price'/>Open<br />
-   <input type='checkbox' name='feature' value='Closing price'/>Close<br />
-   <input type='checkbox' name='feature' value='Highest price'/>High<br />
-   <input type='checkbox' name='feature' value='Lowest price'/>Low<br />
+   <!--Features: <br /> -->
+   <input type='checkbox' name='open' />Opening price<br />
+   <input type='checkbox' name='close'/>Closing price<br />
+   <input type='checkbox' name='high' />Highest price<br />
+   <input type='checkbox' name='low'  />Lowest price<br />
    </p>
    
    <p>

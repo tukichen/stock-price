@@ -1,9 +1,21 @@
 import os
+import numpy as np
+import pandas as pd
+import simplejson as json
+import requests
+import quandl
+
+import bokeh
+from bokeh.layouts import gridplot
+from bokeh.plotting import figure, show, output_file
+
 from flask import Flask,render_template,request, redirect
+# ----------------------------------------------------------------------
 app = Flask(__name__)
 
+# a dict to collect input data
 app.vars = {}
-f1, f2, f3, f4 = ['Open','Close','High','Low']
+
 
 # create a dict of questions
 app.questions = {}
@@ -25,11 +37,15 @@ def index():
     else:
         #request was a POST
         app.vars['name'] = request.form['name']
-        app.vars['age'] = request.form['age']
+        app.vars['input_feature'] = []
+        if request.form['open']:  app.vars['input_feature'].append(' - Open')
+        if request.form['close']: app.vars['input_feature'].append(' - Close')
+        if request.form['high']:  app.vars['input_feature'].append(' - High')
+        if request.form['low']:   app.vars['input_feature'].append(' - Low')
         
-        f = open('%s_%s.txt'%(app.vars['name'],app.vars['age']),'w')
+        f = open('%s_price.txt'%(app.vars['name']),'w')
         f.write('Name: %s\n'%(app.vars['name']))
-        f.write('Age: %s\n\n'%(app.vars['age']))
+        f.write('price'+ '|'.join(app.vars['input_feature'])+'\n')
         f.close()
         
         return redirect('/main')
@@ -63,7 +79,7 @@ def next2():  #can't have two functions with the same name
     # Then, we return to the main function, so it can tell us whether to
     # display another question page, or to show the end page.
     
-    f = open('%s_%s.txt'%(app.vars['name'],app.vars['age']),'a') #a is for append
+    f = open('%s_price.txt'%(app.vars['name']),'a') #a is for append
     f.write('%s\n'%(app.currentq))
     f.write('%s\n\n'%(request.form['answer_from_layout'])) #this was the 'name' on layout.html!
     f.close()
