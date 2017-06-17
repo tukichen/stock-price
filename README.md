@@ -1,4 +1,12 @@
-# Flask on Heroku
+# A Web App for Interactive US and Chinese Stock Price Chart
+* This web app displays an interactive price chart for >6000 stocks in the US and Chinese stock market.
+
+* Users can input stock tick symbols and get plots of the opening price, closing price, highest price and lowest price over all times for a stock. 
+
+http://chen-stock.herokuapp.com
+
+
+## Flask on Heroku
 
 This project is intended to help you tie together some important concepts and
 technologies from the 12-day course, including Git, Flask, JSON, Pandas,
